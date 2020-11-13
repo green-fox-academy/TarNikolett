@@ -13,7 +13,7 @@
 const lineCount = 4;
 let symbol = '*';
 
-for (let a = 1; a <= 4; a++) {
+for (let a = 1; a <= lineCount; a++) {
     if (a <= 1) {
         console.log(symbol);
     }
