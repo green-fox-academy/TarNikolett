@@ -1,0 +1,53 @@
+html {
+    background-image: url(assets/topography.png);
+    font-family: 'Itim', cursive;
+}
+.navbar {
+    background-color: #333333;
+    width: 100%;
+    top:0;
+    left:0;
+    position: fixed;
+}
+.navbar_logo {
+    background-color: #333333;
+    border-style: none;
+    float: left;
+}
+.navbar_links a {
+    color:#ff0099;
+    cursor: pointer;
+}
+.navbar_links {   
+    float: right;
+    padding: 10px 20px;
+    word-spacing: 20px;
+}
+ .personal {    
+    font-size: 25px;
+    padding: 3% 10%;
+}
+ .name {
+    font-size: 65px;
+}
+ h2{
+    color: #ff0099;
+}
+p {
+    font-family: 'Roboto Mono', monospace;
+}
+.simbol {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 20px;
+    font-size: 30px;
+}
+.title {
+    text-align: center;
+    font-size: 40px;
+}
+.definitions {
+    padding: 0% 10%;
+    font-size: 25px;
+}
+
