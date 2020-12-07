@@ -21,7 +21,10 @@ function initializePokemon() {
     new Pokemon('Kingler', 'water', 'fire')
   ];
 }
-function chooseEffective(myPokemon, enemyPokemon) {
-  if (enemyPokemon.type == 'leaf' && myPokemon.type == 'water') {
-    return myPokemon.name
-    }};
+
+function chooseEffective( myPokemon, enemyPokemon){
+  for ( let i = 0; i < myPokemon.length ; i++){
+    if (myPokemon[i].isEffectiveAgainst(enemyPokemon))
+    return myPokemon[i].name
+  }
+};
