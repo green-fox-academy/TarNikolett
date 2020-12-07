@@ -41,12 +41,15 @@ let diceSet = new DiceSet();
 
 let rollRound = diceSet.roll();
 
+let count = 0;
+
 for (let i = 0; i < rollRound.length; i++){
     while ( rollRound[i] !== 6){
         diceSet.reroll(i);
         rollRound = diceSet.getCurrent();
+        count++;
     }
 };
 
 console.log(rollRound);
- 
+console.log(count); 
