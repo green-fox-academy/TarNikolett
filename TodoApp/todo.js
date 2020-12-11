@@ -5,8 +5,8 @@ Akkor ki kell nyomtatnia az applikáció "használati utasítását"
 
 import minimist from 'minimist';
 
-function todo (){
-    console.log( 
+function todo() {
+    console.log(
         `Parancssori argumentumok: \n-l   Kilistázza a feladatokat \n-a  Új feladatot ad hozzá \n-r  Eltávolít egy feladatot \n-c  Teljesít egy feladatot`
     )
 };
@@ -25,13 +25,15 @@ function todo (){
 
 import * as fs from 'fs';
 
-let args = minimist(process.argv);
+fs.writeFileSync('todos.txt', 'Kutyát sétáltatni');
+fs.appendFileSync('todos.txt', ' \nTejet venni');
+fs.appendFileSync('todos.txt', ' \nMegcsinálni a leckét');
 
-function listOfThings (args){
-        if ( args === '-l'){
-            console.log( fs.readFileSync('todos.txt').toString());
-        }
-    
+let listOfThing = fs.readFileSync('todos.txt').toString().split('\n')
+
+function printTodos() {
+    for (let i = 0; i < (listOfThing.length); i++) {
+        console.log(i + ' ' + listOfThing[i]);
+    }
 };
-
-listOfThings('-l');
+printTodos();
