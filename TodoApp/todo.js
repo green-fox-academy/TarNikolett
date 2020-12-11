@@ -10,6 +10,7 @@ function todo() {
         `Parancssori argumentumok: \n-l   Kilistázza a feladatokat \n-a  Új feladatot ad hozzá \n-r  Eltávolít egy feladatot \n-c  Teljesít egy feladatot`
     )
 };
+todo();
 
 /*
 ## Tennivalok kilistazasa
@@ -29,11 +30,17 @@ fs.writeFileSync('todos.txt', 'Kutyát sétáltatni');
 fs.appendFileSync('todos.txt', ' \nTejet venni');
 fs.appendFileSync('todos.txt', ' \nMegcsinálni a leckét');
 
-let listOfThing = fs.readFileSync('todos.txt').toString().split('\n')
+let args = minimist(process.argv);
 
 function printTodos() {
-    for (let i = 0; i < (listOfThing.length); i++) {
-        console.log(i + ' ' + listOfThing[i]);
+    let listOfThing = fs.readFileSync('todos.txt').toString().split('\n')
+    if (args.l === true) {
+        for (let i = 0; i < (listOfThing.length); i++) {
+            console.log(i + ' ' + listOfThing[i]);
+        }
+    }
+    else {
+        console.log('nem jó!')
     }
 };
 printTodos();
