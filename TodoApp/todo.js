@@ -1,6 +1,8 @@
-/* Adott a megnyitott terminál a projekt könyvtáron belül
-Amikor elindítom az alkalmazást argumentum nélkül
-Akkor ki kell nyomtatnia az applikáció "használati utasítását"
+/* 
+## Használat megjelenítése 
+**Adott** a megnyitott terminál a projekt könyvtáron belül
+**Amikor** elindítom az alkalmazást argumentum nélkül
+**Akkor** ki kell nyomtatnia az applikáció "használati utasítását"
  */
 
 import minimist from 'minimist';
@@ -39,8 +41,26 @@ function printTodos() {
             console.log(i + ' ' + listOfThing[i]);
         }
     }
-    else {
-        console.log('nem jó!')
-    }
 };
 printTodos();
+
+/*
+## Ures lista
+**Adott** a megnyitott terminál a projekt könyvtáron belül
+*És* a fájl, ahol tároljuk a tennivalókat
+*És* a fájlban 0 tennivaló van elmentve
+**Amikor** az applikációt az -l argumentummal futtatjuk
+**Akkor** nyomtassa ki a konzolra az alábbi üzenetet:
+Nincs mára tennivalód! :)
+*/
+
+
+let nothingToDoForToday = fs.readFileSync('nothingtodo.txt').toString();
+function nothingToDo(){
+    if (args.l === true){
+        if ( nothingToDoForToday == ''){
+            console.log('Nincs mára tennivalód! :)')
+        }
+    }
+};
+nothingToDo();
