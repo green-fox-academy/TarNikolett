@@ -12,6 +12,7 @@ function writeArgs() {
         -c  Teljesít egy feladatot`
     )
 };
+writeArgs();
 
 let args = minimist(process.argv);
 
@@ -31,7 +32,7 @@ function toDo() {
     }
     //## Uj tennivalo hozzaadasa
 
-    else if (args.a != false) {
+    else if (args.a != true || false) {
         addThingsToDo()
     }
 };
@@ -39,7 +40,7 @@ function toDo() {
 toDo();
 
 function writeThingsToDo() {
-let listOfThing = fs.readFileSync('todos.txt').toString().split('\n');
+    let listOfThing = fs.readFileSync('todos.txt').toString().split('\n');
     for (let i = 0; i < listOfThing.length; i++) {
         console.log(i + 1 + ' ' + listOfThing[i]);
     };
