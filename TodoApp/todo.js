@@ -25,6 +25,15 @@ todo();
 **Akkor** nyomtassa ki a konzolra a tennivalókat a fájlból, ahol tároljuk őket
 *És* adjon eléjük sorszámot
 */
+/*
+## Ures lista
+**Adott** a megnyitott terminál a projekt könyvtáron belül
+*És* a fájl, ahol tároljuk a tennivalókat
+*És* a fájlban 0 tennivaló van elmentve
+**Amikor** az applikációt az -l argumentummal futtatjuk
+**Akkor** nyomtassa ki a konzolra az alábbi üzenetet:
+Nincs mára tennivalód! :)
+*/
 
 import * as fs from 'fs';
 
@@ -36,31 +45,18 @@ let args = minimist(process.argv);
 
 function printTodos() {
     let listOfThing = fs.readFileSync('todos.txt').toString().split('\n')
-    if (args.l === true) {
-        for (let i = 0; i < (listOfThing.length); i++) {
-            console.log(i + ' ' + listOfThing[i]);
+
+    if (args.l === true && listOfThing != '') {
+
+        for (let i = 0; i < listOfThing.length; i++) {
+            console.log(i +1 + ' ' + listOfThing[i]);
         }
     }
+
+    else if ( args.l === true && listOfThing == '') {
+        console.log('Nincs mára tennivalód! :)')
+    }
 };
+
 printTodos();
 
-/*
-## Ures lista
-**Adott** a megnyitott terminál a projekt könyvtáron belül
-*És* a fájl, ahol tároljuk a tennivalókat
-*És* a fájlban 0 tennivaló van elmentve
-**Amikor** az applikációt az -l argumentummal futtatjuk
-**Akkor** nyomtassa ki a konzolra az alábbi üzenetet:
-Nincs mára tennivalód! :)
-*/
-
-
-let nothingToDoForToday = fs.readFileSync('nothingtodo.txt').toString();
-function nothingToDo(){
-    if (args.l === true){
-        if ( nothingToDoForToday == ''){
-            console.log('Nincs mára tennivalód! :)')
-        }
-    }
-};
-nothingToDo();
