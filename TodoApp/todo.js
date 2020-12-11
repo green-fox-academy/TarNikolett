@@ -30,8 +30,8 @@ function toDo() {
         }
     }
     //## Uj tennivalo hozzaadasa
-    
-    else if (listOfThing != '' && args.a != false) {
+
+    else if (args.a != false) {
         addThingsToDo()
     }
 };
