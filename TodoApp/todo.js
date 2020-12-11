@@ -60,3 +60,19 @@ function printTodos() {
 
 printTodos();
 
+/*
+## Uj tennivalo hozzaadasa
+**Adott** a megnyitott terminál a projekt könyvtáron belül
+**Amikor** az applikációt az -a "Megetetni a papagájt" argumentummal futtatjuk
+**Akkor** az app adja hozzá a listánkhoz az új tennivalót Megetetni a papagájt leírással
+*/
+
+function addTodos(){
+    if( args.a != false){
+        fs.appendFileSync( 'todos.txt', '\n' + (args.a) );
+    }
+}
+addTodos(); 
+printTodos();
+
+
