@@ -15,6 +15,8 @@ writeArgs();
 
 let args = minimist(process.argv);
 let listOfThing = fs.readFileSync('todos.txt').toString().split('\n');
+let argsKeys = Object.keys(args);
+
 
 function toDo() {
     if (args.l === true) {
@@ -26,8 +28,12 @@ function toDo() {
         if (listOfThing == '') {
             console.log('Nincs mára tennivalód! :)')
         }
-    } else if (typeof args.a == 'string') {
+    }
+    if (typeof args.a == 'string') {
         addThingsToDo()
+    }
+    if (args.r && args.r == 'number') {
+        removeThingsToDo()
     }
     try {
         if (args.a && typeof args.a !== 'string') {
@@ -42,13 +48,14 @@ function toDo() {
         if (args.r > listOfThing.length) {
             throw Error('Nem lehetséges az eltávolítás: túlindexelési probléma adódott!');
         }
-        if (args.keys !== 'l', 'a', 'r', 'c') {
-            throw Error('Nem támogatott argumentum! Nyomtassa ki az applikáció "használati utasítását".')
+        if (argsKeys.includes('a') || argsKeys.includes('l') || argsKeys.includes('r') || argsKeys.includes('c')) {
+            return true
         }
+        throw Error('Nem támogatott argumentum! Nyomtassa ki az applikáció "használati utasítását".')
     }
     catch (err) {
         console.log(err.message);
-    }
+        }
 };
 toDo();
 
@@ -66,4 +73,4 @@ function addThingsToDo() {
 function removeThingsToDo() {
     let donetodo = listOfThing.splice(args.r - 1, 1);
     fs.writeFileSync('todos.txt', listOfThing.toString());
-}; 
+};
