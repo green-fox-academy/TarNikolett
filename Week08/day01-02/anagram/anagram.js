@@ -10,4 +10,3 @@ export function anagramma(param1, param2) {
     return false
 }
 console.log(anagramma('alma', 'Amla'));
-
