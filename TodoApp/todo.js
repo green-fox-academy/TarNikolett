@@ -11,12 +11,15 @@ function writeArgs() {
         -c  Teljesít egy feladatot`
     )
 };
-writeArgs();
+//writeArgs();
 
 let args = minimist(process.argv);
 let listOfThing = fs.readFileSync('todos.txt').toString().split('\n');
 let argsKeys = Object.keys(args);
 
+let jsonContent = fs.readFileSync('todos.json').toString();
+let jsonTodos = JSON.parse(jsonContent);
+console.log(jsonTodos);
 
 function toDo() {
     if (args.l === true) {
@@ -29,10 +32,10 @@ function toDo() {
             console.log('Nincs mára tennivalód! :)')
         }
     }
-    if (typeof args.a == 'string') {
+    else if (typeof args.a == 'string') {
         addThingsToDo()
     }
-    if (args.r && args.r == 'number') {
+    else if (args.r && typeof args.r == 'number') {
         removeThingsToDo()
     }
     try {
@@ -63,14 +66,9 @@ function addThingsToDo() {
     fs.appendFileSync('todos.txt', '\n' + (args.a))
 };
 
-// ## Tennivalo eltavolitasa
-/* **Adott** a megnyitott terminál a projekt könyvtáron belül
-*És* a fájl, ahol tároljuk a tennivalókat
-*És* a fájlban 2 vagy több tennivaló van elmentve
-**Amikor** az applikációt az -r 2 argumentummal futtatjuk
-**Akkor** az app távolítsa el a második tennivalónkat a fájlból */
-
 function removeThingsToDo() {
     let donetodo = listOfThing.splice(args.r - 1, 1);
-    fs.writeFileSync('todos.txt', listOfThing.toString());
+    fs.writeFileSync('todos.txt' , listOfThing.toString());
+    console.log(donetodo);
+    console.log(listOfThing);
 };
