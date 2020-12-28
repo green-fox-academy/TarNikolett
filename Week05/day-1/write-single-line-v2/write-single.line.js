@@ -7,11 +7,17 @@
 const fs = require('fs');
 
 function changeContent ( fileName){
-    try { 
-        fs.writeFileSync( fileName , ' Tar Nikolett' );
+    try{
+        if (fs.existsSync( fileName)){
+            fs.writeFileSync( fileName , ' Tar Nikolett' );
+        }
+
+        else {
+            throw  Error ( 'Unable to write file: my-file.txt' );
+        }
     }
-    catch (err){
-        console.log ( 'Unable to write file: my-file.txt' );
+    catch ( err ){
+        console.log(err.message)
     }
 };
 changeContent ( 'my-file.txt' )
