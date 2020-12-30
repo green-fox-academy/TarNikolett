@@ -25,7 +25,7 @@ class Animal {
     }
 }
 
-//const dog = new Animal(50,50);
-//console.log(dog);
-//dog.play();
-//console.log(dog);
+const dog = new Animal(50,50);
+console.log(dog);
+dog.play();
+console.log(dog);

@@ -24,4 +24,4 @@ class PostIt {
 const firstAnswer = new PostIt('orange','Egy, megerett a meggy','blue');
 const secondAnswer = new PostIt('pink', 'Ketto, csipkebokor vesszo', 'black');
 const thirdAnswer = new PostIt ('yellow', '1 liter tej!', 'green');
-// console.log(firstAnswer, secondAnswer, thirdAnswer);
+console.log(firstAnswer, secondAnswer, thirdAnswer);

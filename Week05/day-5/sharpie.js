@@ -19,7 +19,7 @@ use (){
     this.inkAmount--;
 }
 }
-//const sharpie1 = new Sharpie('blue', 10);
-//console.log(sharpie1);
-//sharpie1.use();
-//console.log(sharpie1);
+const sharpie1 = new Sharpie('blue', 10);
+console.log(sharpie1);
+sharpie1.use();
+console.log(sharpie1);
