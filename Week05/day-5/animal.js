@@ -7,7 +7,7 @@ Készíts egy Animal osztályt
     Minden állat tud inni (drink()), ami csökkenti a szomjúságát eggyel
     Minden állat tud játszani (play()), ami mindkét értéket növeli eggyel    
 */
-class Animal {
+export class Animal {
     hunger = 50;
     thirst = 50;
     constructor(hunger, thirst) {
@@ -25,7 +25,7 @@ class Animal {
     }
 }
 
-const dog = new Animal(50,50);
+/* const dog = new Animal(50,50);
 console.log(dog);
 dog.play();
-console.log(dog);
+console.log(dog); */
