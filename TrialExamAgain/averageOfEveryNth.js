@@ -30,7 +30,7 @@ function averageOfEveryNth(array, number) {
     }
     let sumNumber = allNthNumber.reduce((a, b) => a + b);
     let solution = sumNumber / allNthNumber.length;
-    console.log(solution);
+    return solution;
 };
 
 

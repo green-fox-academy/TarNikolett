@@ -19,17 +19,15 @@ function grammarCheck(string) {
     let splittedString = string.split('. ');
     for (let i = 1; i < splittedString.length; i++) {
         let letters = splittedString[i].split('');
-
         if (letters[0] == letters[0].toUpperCase()){
            return true ;
         }
         else {
             return false;
         }
-    
-}
+    }
 };
 
-// console.log( grammarCheck("Ez egy jó példa. Ez egy jó példa."));
-// console.log( grammarCheck("ez még mindig egy jó példa. Hiszen a második mondat nagybetűvel kezdődik.") );
-// console.log( grammarCheck("Ez egy rossz példa. itt nincs nagybetű.") );
+console.log( grammarCheck("Ez egy jó példa. Ez egy jó példa."));
+console.log( grammarCheck("ez még mindig egy jó példa. Hiszen a második mondat nagybetűvel kezdődik.") );
+console.log( grammarCheck("Ez egy rossz példa. itt nincs nagybetű.") );
