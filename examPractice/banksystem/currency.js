@@ -61,11 +61,11 @@ let USADollar = new Currency ( 'USD' , 'Federal Reserve System' , 300 );
 let HUFForint = new Currency ( 'HUF' , 'Hungarian National Bank' , 350);
 console.log(HUFForint, USADollar);
 
-let NikiBankAccount = new bankAccount ( 'Niki' , 3500);
+ let NikiBankAccount = new bankAccount ( 'Niki' , 3500);
 console.log(NikiBankAccount);
-console.log(NikiBankAccount.deposit(200));
+NikiBankAccount.deposit(200);
 console.log(NikiBankAccount);
-console.log(NikiBankAccount.withdraw(1995, 200));
+NikiBankAccount.withdraw(1995, 200);
 console.log(NikiBankAccount);
 
 let trial = new bank ();
