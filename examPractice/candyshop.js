@@ -1,7 +1,6 @@
 class Candy {
     price;
     gramsOfSugar;
-
     constructor(price, gramsOfSugar) {
         this.price = price;
         this.gramsOfSugar = gramsOfSugar
@@ -12,7 +11,6 @@ class CandyShop {
     sugar = 0;
     income = 0;
     inventory = [];
-
     constructor(amountOfSugar) {
         this.sugar = amountOfSugar;
     }
@@ -43,26 +41,26 @@ class CandyShop {
         this.inventory = this.inventory.slice(sellAmount)
     }
 
-    buySugar (amount){
-        if ( this.income < 0){
-            throw new Error (`Don't have enough money`)
-        }   
-        amount /* kg */= 1000 * amount; /* gram */
-        let priceOfSugar= 600;
+    buySugar(amount) {
+        if (this.income < 0) {
+            throw new Error(`Don't have enough money`)
+        }
+        amount /* kg */ = 1000 * amount; /* gram */
+        let priceOfSugar = 600;
         this.sugar += amount; /* gram */
         this.income -= (priceOfSugar * amount) / 1000; /* kg */
-         
+
     }
 
-    toString (){
-        let numbersOfLollipop = 0; 
+    toString() {
+        let numbersOfLollipop = 0;
         let numbersOfHardCandy = 0;
-        for ( let i = 0; i < this.inventory.length; i++){
-            if ( this.inventory[i].price == 600){
-                numbersOfLollipop ++
+        for (let i = 0; i < this.inventory.length; i++) {
+            if (this.inventory[i].price == 600) {
+                numbersOfLollipop++
             }
             else {
-                numbersOfHardCandy ++
+                numbersOfHardCandy++
             }
         }
         return `HardCandy: ${numbersOfHardCandy}, Lollipop: ${numbersOfLollipop}, Sugar: ${this.sugar} grams, Income: ${this.income} Ft,`
@@ -78,8 +76,3 @@ shop.createCandy(Lollipop);
 shop.createCandy(HardCandy);
 shop.createCandy(Lollipop);
 shop.createCandy(HardCandy);
-shop.sell(2);
-console.log(shop);
-shop.buySugar(1);
-console.log(shop.toString());
-

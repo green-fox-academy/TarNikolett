@@ -6,20 +6,15 @@ Példányosításkor a color és a width legyenek kötelezően megadandóak
 Minden példányosított filctoll inkAmount értéke legyen alapból 100
 Legyen az objektumoknak egy use() (használ) metódusa, ami csökkenti az inkAmount értékét
 */
-class Sharpie {
+export class Sharpie {
     color;
     width;
-    inkAmount= 100;
-    constructor (color, width){
-        this.color=color;
-        this.width=width;
-        this.inkAmount=100;
+    inkAmount = 100;
+    constructor(color, width) {
+        this.color = color;
+        this.width = width;
     }
-use (){
-    this.inkAmount--;
+    use() {
+        this.inkAmount--;
+    }
 }
-}
-const sharpie1 = new Sharpie('blue', 10);
-console.log(sharpie1);
-sharpie1.use();
-console.log(sharpie1);
