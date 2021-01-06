@@ -9,7 +9,7 @@ Legyen az objektumoknak egy use() (használ) metódusa, ami csökkenti az inkAmo
 export class Sharpie {
     color;
     width;
-    inkAmount = 100;
+    inkAmount = 2;
     constructor(color, width) {
         this.color = color;
         this.width = width;

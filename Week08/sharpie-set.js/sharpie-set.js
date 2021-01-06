@@ -5,17 +5,21 @@ let sharpie2 = new Sharpie('blue', 20);
 let sharpie3 = new Sharpie('yellow', 8);
 let sharpie4 = new Sharpie('purple', 2);
 
-
 class SharpieSet {
     listOfSharpie = [sharpie1, sharpie2, sharpie3, sharpie4];
 
     countUsable() {
+        let usable = 0;
         for (let i = 0; i < this.listOfSharpie.length; i++) {
             let colorOfSharpie = this.listOfSharpie[i].color;
             if (this.listOfSharpie[i].inkAmount === 0) {
-                throw new Error(`Can't use ${colorOfSharpie} sharpie : it has 0 inkAmount`)
+                console.log(`Can't use ${colorOfSharpie} pen : it has 0 inkAmount`)
+            }
+            else {
+                usable++;
             }
         }
+        console.log(`You can use ${usable} other pen.`)
     }
 
     removeTrash() {
@@ -26,14 +30,3 @@ class SharpieSet {
         }
     }
 }
-
-let test = new SharpieSet();
-/* console.log(test.listOfSharpie);
-console.log(test.countUsable());
-sharpie4.use();
-sharpie4.use();
-console.log(sharpie4);
-test.countUsable();
-test.removeTrash();
-console.log(test.listOfSharpie); */
-
