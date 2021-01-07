@@ -1,0 +1,22 @@
+import USD from './USD.js';
+import HUF from './HUF.js';
+import bankAccount from './bankAccount.js';
+import bank from './bank.js';
+
+let USDTry = new USD();
+console.log(USDTry);
+let HUFtry = new HUF ();
+console.log(HUFtry);
+let myBankAccount = new bankAccount('Niki', 20000);
+console.log(myBankAccount);
+myBankAccount.deposit(50);
+console.log(myBankAccount);
+myBankAccount.withdraw(1995, 1050);
+console.log(myBankAccount);
+let noNameBank = new bank();
+console.log(noNameBank);
+noNameBank.createAccount(myBankAccount);
+let davidBankAccount = new bankAccount('Dávid' , 10000);
+noNameBank.createAccount(davidBankAccount);
+console.log(noNameBank);
+console.log(noNameBank.getAllMoney());
