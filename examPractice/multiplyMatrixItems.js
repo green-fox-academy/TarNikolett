@@ -13,7 +13,7 @@ The result should be:
 3  3  1  5
 9  0  5  4 */
 
-let array =
+let matrix =
     [
         [1, 3, 6, 2],
         [4, 5, 6, 1],
@@ -22,16 +22,20 @@ let array =
     ]
 
 function multiplyMatrixItems(matrix) {
+    let copyMatrix = [];
     for (let row = 0; row < matrix.length; row++) {
+        copyMatrix[row] = [...matrix[row]]; /* vagy: matrix.map(row=> {new.array.push(…row)}) */
         if (row % 2 == 1) {
             for (let item = 0; item < matrix[row].length; item++) {
                 if (matrix[row][item] % 2 == 0) {
-                    matrix[row][item] = matrix[row][item] * 2
+                    copyMatrix[row][item] = matrix[row][item] * 2
                 }
             }
         }
     }
-    return matrix
+    return copyMatrix
 };
 
-console.log(multiplyMatrixItems(array));
+console.log(matrix);
+console.log(multiplyMatrixItems(matrix));
+console.log(matrix);
