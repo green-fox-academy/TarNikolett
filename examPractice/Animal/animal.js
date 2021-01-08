@@ -20,10 +20,10 @@ export default class Animal {
     }
     toString() {
         if (this.isHealthy == 'true') {
-            return (`${this.constructor.name} is healthy, and adoptable`)
+            return (`${this.constructor.name} is healthy, and adoptable! `)
         }
         else if (this.isHealthy == 'false') {
-            return (`${this.constructor.name} is not healthy ${this.healCost} €, and not adoptable`)
+            return (`${this.constructor.name} is not healthy, ${this.healCost} €, and not adoptable! `)
         }
     }
 }
