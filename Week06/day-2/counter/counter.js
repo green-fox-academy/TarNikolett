@@ -6,24 +6,25 @@ Vagy tudjunk hozzáadni (add()) paraméter nélkül is, ami megnöveli eggyel a 
 Tudjuk kiolvasni az aktuális értéket a get() metódussal
 Végül tudjuk beállítani a kezdeti értéket a reset() metódussal */
 
-export class Counter {
+export default class Counter {
     number = 0;
     constructor(number) {
         this.number = number;
+        this.originNumber = number;
     }
 
     add(n) {
-        if (n === undefined) {
-            return (this.number + 1);
+        if (!n) {
+            return this.number = this.number + 1;
         }
-        return (this.number + n);
+        return this.number = this.number + n;
     }
 
     get() {
         return this.number;
     }
-}
-console.log(new Counter(2).add());
-console.log(new Counter(2).add(5));
-console.log(new Counter(3).get());
 
+    reset() {
+        return this.number = this.originNumber;
+    }
+}
