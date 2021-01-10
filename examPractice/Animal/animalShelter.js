@@ -18,19 +18,30 @@ export default class AnimalShelter {
     addAdopter(name) {
         this.adoptersName.push(name);
     }
-    /* findNewOwner() {
 
-    } */
+    findNewOwner() {
+        console.log(this.animals.length, this.adoptersName.length);
+        if (this.animals.length == 0 || this.adoptersName.length == 0) {
+            throw new Error('There are no mor animal or adopters!')
+        }
+        let adoptersName = '';
+        let adoptableAnimal = '';
+        adoptersName = this.adoptersName.splice((Math.floor(Math.random() * this.adoptersName.length)), 1);
+        adoptableAnimal = this.animals.splice((Math.floor(Math.random() * this.animals.length)), 1);
+        console.log(`${adoptersName} adopt ${adoptableAnimal[0].name} ! `);
+    }
+
     earnDonation(amount) {
         this.budget += amount;
         return ` Budget is ${this.budget} €`
     }
+
     toString() {
         let animalsToString = '';
         for (let i = 0; i < this.animals.length; i++) {
             animalsToString += this.animals[i]
         }
-        console.log(`Budget: ${this.budget}€, There are ${this.animals.length} animal(s) and ${this.adoptersName.length} potential adopter(s).`);
+        console.log(`Budget: ${this.budget} €, There are ${this.animals.length} animal(s) and ${this.adoptersName.length} potential adopter(s).`);
         console.log(animalsToString)
     }
 }

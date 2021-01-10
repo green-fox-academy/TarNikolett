@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "Forest_simulator",
+  "version": "1.0.0",
+  "description": "Forest simulator\r You are going to model a Forest with rain and a lumberjack who cuts tall trees.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
