@@ -4,7 +4,6 @@
 }
 .header {
     padding: 30px 50px 20px 50px ;
-
 }
 .form {
     display: block;
@@ -13,23 +12,22 @@
     height: 500px;
     margin: auto;
 }
-#LoginUsernameLabel {
+.LoginUsernameLabel {
     margin-left: 10%;
     padding: 10px 0; 
 }
-#LoginUsername  {
+.LoginUsername {
     display: block;
     margin-left: 10%;
-    border: 1px solid rgb(22, 161, 22);
     width: 350px;
     height: 45px;
     border-radius: 3px;
 }
-#LoginPasswordLabel {
+.LoginPasswordLabel {
     margin-left: 10%;
     padding: 10px 0;
 }
-#LoginPassword {
+.LoginPassword {
     display: block;
     margin-left: 10%;
     width: 350px;
@@ -37,10 +35,6 @@
     border: 1px solid gray;
     border-radius: 3px;
 }
-/* .eyeimage{
-    height: 20px;
-    width: 20px;
-} */
 .forgetText{
     padding: 10px;
     margin-left: 290px;
@@ -57,9 +51,4 @@
     background-color: rgb(28, 28, 34);
     color: white;
     font-weight: bolder;
-}
-.bi-eye {
-    display: block;
-    position: relative;
-    margin-left: 186px;
 }
