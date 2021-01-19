@@ -1,50 +1,41 @@
 .container {
+    display: flex;
+    justify-content: center;
     background-color: rgb(199, 199, 192);
     font-family: 'Roboto', sans-serif;
 }
-.header {
-    padding: 30px 50px 20px 50px ;
-}
 .form {
-    display: block;
     background-color: white;
+    display: flex;
+    flex-direction: column;
     width: 500px;
     height: 500px;
-    margin: auto;
 }
-.LoginUsernameLabel {
-    margin-left: 10%;
-    padding: 10px 0; 
+.header{
+    margin: 50px 50px 20px;
 }
-.LoginUsername {
-    display: block;
-    margin-left: 10%;
-    width: 350px;
-    height: 45px;
-    border-radius: 3px;
+input {
+    width: 400px;
+    height: 50px;
+    align-self: center;
+    border: 1px solid lightgray;
 }
-.LoginPasswordLabel {
-    margin-left: 10%;
-    padding: 10px 0;
+label {
+    margin: 10px 50px;
+    font-weight: bolder;
 }
-.LoginPassword {
-    display: block;
-    margin-left: 10%;
-    width: 350px;
-    height: 45px;
-    border: 1px solid gray;
-    border-radius: 3px;
+input:focus{
+    outline-color: rgb(20, 167, 20);
 }
 .forgetText{
-    padding: 10px;
-    margin-left: 290px;
+    align-self: flex-end;
     color:black;
     text-decoration: none;
     font-size: smaller;
-    cursor: pointer;
+    margin: 10px 50px;
 }
 .button {
-    margin: 8% 10%;
+    margin: 50px;
     width: 130px;
     height: 50px;
     border-radius:30px;
