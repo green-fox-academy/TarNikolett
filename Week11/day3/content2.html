@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+
+<body>
+  <ul>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+  </ul>
+
+  <script>
+    //1) cseréld le a lista elemek tartalmát az alábbi lista elemeire
+    //['apple', 'banana', 'cat', 'dog']
+    let listItems = document.querySelectorAll('ul li');
+    console.log(listItems);
+    let listItemsArray = Array.from(listItems);
+    let contentArray = ['apple', 'banana', 'cat', 'dog'];
+    for (let i = 0; i < contentArray.length; i++) {
+      listItemsArray[i].textContent = contentArray[i]
+    };
+
+    //2) változtasd meg az <ul> elem háttérszínét lime zöldre ('limegreen')
+    //használd a 'class'-t a style tulajdonság helyett
+    let list = document.querySelector('ul');
+    list.setAttribute("class", "unorderedList");
+    //list.style.backgroundColor = 'limegreen';
+    list.setAttribute('style', 'background-color: limegreen');
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: innerHTML, textContent</title>
+</head>
+
+<body>
+    <p class="apple">apple</p>
+    <p class="balloon">banana</p>
+    <p class="cat">car</p>
+    <p class="animals">goat rabbit <strong>cat</strong> dog</p>
+
+    <script>
+        //1) Fűzd hozzá minden p tag-hez az előző tartalmát.
+        let p = document.querySelectorAll('p');
+        for (let i = 0; i < p.length; i++) {
+            p[i + 1].textContent += p[i].textContent
+        };
+        //2) Ezt ismételd meg, de a cat maradjon kiemelve (strong)
+        let p = document.querySelectorAll('p');
+        for (let i = 0; i < p.length; i++) {
+            p[i + 1].innerHTML += p[i].innerHTML
+        };
+
+    </script>
+
+</body>
+
+</html>
