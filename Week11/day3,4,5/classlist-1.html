@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: ClassList</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .lufi {
+            background-color: lime;
+            border-radius: 100%;
+        }
+
+        .körte {
+            background: lime;
+            padding: 2rem;
+            text-decoration: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="alma">alma</p>
+    <p class="lufi">lufi</p>
+    <p class="cica red-dot">cica</p>
+    <p class="delfin">delfin</p>
+
+    <script>
+        // Ha a 4. p-nek van 'delfin' osztálya, cseréld le az alma tartalmát
+        // arra, hogy with 'körte'.
+        //Ha az 1. p-nek van 'alma' osztálya, cseréld le az cica tartalmát
+        //arra, hogy with 'kutya'.
+        let p = document.querySelectorAll('p');
+        for (let i = 0; i < p.length; i++) {
+            if (p[3].className == 'delfin') {
+                p[3].textContent = 'körte';
+            }
+            if (p[0].className == 'alma') {
+                let cat = document.querySelector('.cica');
+                cat.textContent = 'kutya'
+            }
+        };
+
+        //Legyen az "alma" piros színű, adj hozzá a .red osztályt
+        let alma = document.querySelector('.alma');
+        alma.classList.add('red');
+
+        //Legyen a lufi lufiszerűbb (változtasd meg az alakját a mostanihoz képest)
+
+
+    </script>
+
+</body>
+
+</html>

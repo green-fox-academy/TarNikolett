@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: CreateElement</title>
+</head>
+
+<body>
+    <main></main>
+
+    <script>
+        const kids = [
+            { 'petName': 'Wattled crane', 'owner': 'Bryant' },
+            { 'petName': 'Devil, tasmanian', 'owner': 'Alejandro' },
+            { 'petName': 'Mynah, common', 'owner': 'Nelie' },
+            { 'petName': 'Dolphin, common', 'owner': 'Mariele' },
+            { 'petName': 'Gray duiker', 'owner': 'Maddalena' },
+            { 'petName': 'Crab (unidentified)', 'owner': 'Lucine' },
+            { 'petName': 'Ant (unidentified)', 'owner': 'Lorianna' },
+            { 'petName': 'Bison, american', 'owner': 'Tommie' },
+            { 'petName': 'Yellow mongoose', 'owner': 'Vivyan' },
+            { 'petName': 'Carpet snake', 'owner': 'Veda' },
+            { 'petName': 'Lesser mouse lemur', 'owner': 'Isidor' },
+        ];
+        //1. Hozz létre egy article tag-et minden gyereknek (kids lista).
+        let newArticleArray = []
+        for (let i = 0; i < kids.length; i++) {
+            let newArticle = document.createElement('article');
+            newArticleArray.push(newArticle);
+        };
+
+        //2. Hozz létre egy h3 és egy p tag-et minden article-nek, és fűzd is hozzá.
+        //     - a H3-ban a tulajdonos neve legyen (owner)
+        //     - a p-ben az állat neve (petName)
+
+        for (let i = 0; i < newArticleArray.length; i++) {
+            let newh3 = document.createElement('h3');
+            let newP = document.createElement('p');
+            //newArticleArray[i].textContent = kids[i].owner;
+            newP.textContent = kids[i].petName;
+            newh3.textContent = kids[i].owner;
+            newArticleArray[i].appendChild(newh3);
+            newArticleArray[i].appendChild(newP);
+        };
+
+        //3. Add hozzá az article tag-et a main-hez.
+        let mainTag = document.querySelector('main');
+        for (let i = 0; i < newArticleArray.length; i++) {
+            mainTag.appendChild(newArticleArray[i]);
+        };
+
+    </script>
+</body>
+
+</html>

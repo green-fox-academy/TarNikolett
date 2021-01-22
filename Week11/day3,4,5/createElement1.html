@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: CreateElement</title>
+</head>
+
+<body>
+    <ul class="aszteroidák">
+        <li id="b325" class="aszteroida">The King</li>
+        <li class="aszteroida b326">The Conceited Man</li>
+    </ul>
+    <div class="container"></div>
+
+    <script>
+      //Adj hozzá egy elemet az aszteroida listához 'The Green Fox' tartalommal!
+        let ul = document.querySelector('ul');
+        let newElement = document.createElement('li');
+        newElement.textContent = 'The GreenFox';
+        ul.appendChild(newElement);
+
+      //Adj hozzá egy elemet az aszteroida listához 'The Lamplighter' tartalommal!
+        let newElementAgain = document.createElement('li');
+        newElementAgain.textContent = 'The Lamplighter'
+        ul.appendChild(newElementAgain);
+
+      //Adj hozzá egy címsort (heading) a .container-hez 'Tudok elemeket hozzáadni a DOM-hoz!' tartalommal!
+        let newHeading = document.createElement('h1');
+        newHeading.textContent = 'Tudok elemeket hozzáadni a DOM-hoz!';
+        const container = document.querySelector('.container');
+        container.appendChild(newHeading);
+
+      //Adj hozzá egy képet (bármilyen képet) a konténerhez!
+        let img = document.createElement('img');
+        img.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgMiWK1bkq-seUP-p8d3bxoemrgdSOQS9IEg&usqp=CAU');
+        container.appendChild(img);
+
+    </script>
+
+</body>
+
+</html>
