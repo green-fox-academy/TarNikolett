@@ -23,7 +23,8 @@ body.appendChild(div);
 let emptyDiv = document.createElement('container');
 body.appendChild(emptyDiv);
 
-let highlightedItem = document.querySelector('#bread').style.background = 'lightgrey';
+let highlightedItem = document.querySelector('#bread');
+highlightedItem.style.background = 'lightgrey';
 
 let upButton = document.querySelector('#Up');
 let downButton = document.querySelector('#Down');
@@ -31,11 +32,16 @@ let moveButton = document.querySelector('#Move');
 let deleteButton = document.querySelector('#Delete');
 
 downButton.onclick = () => {
-    for (let i = 0; i < liElementArray; i++) {
-        console.log(liElementArray[i]);
-        if (liElementArray[i].style.background = 'lightgrey') {
-            liElementArray[i].style.background = 'white';
-            liElementArray[i + 1].style.background = 'lightgrey';
-        }
+    let lightgreyItemIndex = liElementArray.indexOf(highlightedItem);
+    if (lightgreyItemIndex >= liElementArray.length - 1) {
+        highlightedItem = liElementArray[lightgreyItemIndex];
+        highlightedItem.style.background = 'white';
+        lightgreyItemIndex = 0;
+        highlightedItem = liElementArray[lightgreyItemIndex];
+        highlightedItem.style.background = 'lightgrey';
+        return
     }
+    liElementArray[lightgreyItemIndex].style.background = 'white';
+    highlightedItem = liElementArray[lightgreyItemIndex + 1];
+    highlightedItem.style.background = 'lightgrey';
 };
