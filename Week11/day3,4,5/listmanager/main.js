@@ -45,3 +45,34 @@ downButton.onclick = () => {
     highlightedItem = liElementArray[lightgreyItemIndex + 1];
     highlightedItem.style.background = 'lightgrey';
 };
+
+upButton.onclick = () => {
+    //let actualHighlightedItem = 
+    let lightgreyItemIndex = liElementArray.indexOf(highlightedItem);
+    if (lightgreyItemIndex == liElementArray.length - 1){ 
+        highlightedItem = liElementArray[lightgreyItemIndex];
+        highlightedItem.style.background = 'white';
+        lightgreyItemIndex -= 1;
+        highlightedItem = liElementArray[lightgreyItemIndex];
+        highlightedItem.style.background = 'lightgrey';
+        return
+    }  
+    if (lightgreyItemIndex == 0){ 
+        highlightedItem = liElementArray[lightgreyItemIndex];
+        highlightedItem.style.background = 'white';
+        lightgreyItemIndex = liElementArray.length -1 ;
+        highlightedItem = liElementArray[lightgreyItemIndex];
+        highlightedItem.style.background = 'lightgrey';
+        return
+    }  
+    liElementArray[lightgreyItemIndex].style.background = 'white';
+    highlightedItem = liElementArray[lightgreyItemIndex -1];
+    highlightedItem.style.background = 'lightgrey';
+};
+
+
+deleteButton.onclick = () => {
+    let lightgreyItemIndex = liElementArray.indexOf(highlightedItem);
+    document.querySelectorAll("ul")[0].removeChild(liElementArray[lightgreyItemIndex]);
+
+};
