@@ -47,7 +47,6 @@ downButton.onclick = () => {
 };
 
 upButton.onclick = () => {
-    //let actualHighlightedItem = 
     let lightgreyItemIndex = liElementArray.indexOf(highlightedItem);
     if (lightgreyItemIndex == liElementArray.length - 1){ 
         highlightedItem = liElementArray[lightgreyItemIndex];
@@ -74,5 +73,4 @@ upButton.onclick = () => {
 deleteButton.onclick = () => {
     let lightgreyItemIndex = liElementArray.indexOf(highlightedItem);
     document.querySelectorAll("ul")[0].removeChild(liElementArray[lightgreyItemIndex]);
-
 };
