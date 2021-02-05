@@ -1,0 +1,19 @@
+nav {
+    text-transform:uppercase;
+    padding: 20px 5px;
+}
+a {
+    padding: 0 10px;
+    text-decoration: non e;
+}
+th {
+    background-color: black;
+    color:white;
+    height: 50px;
+}
+td {
+    background-color: beige;
+}
+tr {
+    border: 1px solid blue
+}

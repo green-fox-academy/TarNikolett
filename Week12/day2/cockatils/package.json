@@ -1,5 +1,6 @@
 {
-  "name": "cocktails",
+  "type": "module",
+  "name": "cockatils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
