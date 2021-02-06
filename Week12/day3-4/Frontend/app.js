@@ -1,6 +1,7 @@
 import express from 'express';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { runInNewContext } from 'vm';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
@@ -66,18 +67,49 @@ app.get('/greeter', (req, res) => {
 
 app.get('/appenda/:appendable', (req, res) => {
     let obj = {
-        appended : req.params.appendable
+        appended: req.params.appendable
     };
     obj.appended = appendA(req.params.appendable);
     console.log(obj);
     res.send({
-        appended : obj.appended
+        appended: obj.appended
     });
 });
 
 function appendA(word) {
     let addLetter = "a";
     return word.concat(addLetter)
+};
+
+app.post('/dountil/:action', (req, res) => {
+    if (req.params.action == 'sum') {
+        let sumNumber = doUntilSum(req.body.until)
+        res.send({
+            result: sumNumber
+        })
+    }
+    if (req.params.action == 'factor') {
+        let factoredNumber = doUntilFactor(req.body.until)
+        res.send({
+            result: factoredNumber
+        })
+    }
+})
+
+function doUntilSum(number) {
+    let sum = 0;
+    for (let i = 1; i <= number; i++) {
+        sum += i
+    }
+    return sum
+};
+
+function doUntilFactor(number) {
+    let factoredNumber = 1;
+    for (let i = 1; i <= number; i++) {
+        factoredNumber = factoredNumber * i;
+    }
+    return factoredNumber
 };
 
 app.listen(port, () => {
