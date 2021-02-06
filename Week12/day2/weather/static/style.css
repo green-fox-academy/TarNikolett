@@ -1,0 +1,23 @@
+*{
+    font-family: 'Pangolin', cursive;
+}
+
+a{
+    text-decoration: none;
+}
+
+img {
+    width: 100px;
+    height: 100px;;
+}
+.container {
+    height: 150px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid lightsteelblue;
+    padding: 0 10px;
+    margin: 20px;
+}

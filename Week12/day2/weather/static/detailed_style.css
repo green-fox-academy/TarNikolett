@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+.container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
