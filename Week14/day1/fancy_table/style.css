@@ -1,0 +1,35 @@
+.data-currency::before {
+    content:'$ '
+}
+body {
+    background-color: rgb(59, 59, 235);
+}
+table {
+    border-spacing: 0;
+    margin: 0px auto;
+}
+td,
+tr,
+th {
+    width: 200px;
+    border: 1px solid grey;
+    height: 40px;
+    padding: 0 10px;
+}
+th {
+    background-color: rgb(37, 35, 35);
+    color:whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    height: 50px;
+    text-align: left;
+}
+.january,
+.march,
+.may {
+    background-color: lightgrey;
+}
+.february,
+.april{
+    background-color: rgb(180, 160, 160);
+}
