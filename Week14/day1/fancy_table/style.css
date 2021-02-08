@@ -1,5 +1,8 @@
 .data-currency::before {
-    content:'$ '
+    content:'$ '    
+}
+.data-currency{
+    border-left: 1px solid grey;
 }
 body {
     background-color: rgb(59, 59, 235);
@@ -9,20 +12,22 @@ table {
     margin: 0px auto;
 }
 td,
-tr,
-th {
+tr {
     width: 200px;
-    border: 1px solid grey;
     height: 40px;
     padding: 0 10px;
+    border-bottom: 1px solid grey;
 }
 th {
+    border-bottom:  1px solid grey;
     background-color: rgb(37, 35, 35);
     color:whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     height: 50px;
     text-align: left;
+    width: 200px;
+    padding: 0 10px;
 }
 .january,
 .march,
@@ -33,3 +38,19 @@ th {
 .april{
     background-color: rgb(180, 160, 160);
 }
+
+.month{
+    border-right: 1px solid grey;
+    border-radius: 5px 0 0 0;
+}
+.sales{
+    border-radius: 0 5px 0 0;
+}
+.may-cell{
+    border-radius: 0 0 0 5px;
+}
+.last-cell{
+    border-radius: 0 0 5px 0;
+}
+
+
