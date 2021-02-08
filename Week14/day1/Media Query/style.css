@@ -1,11 +1,9 @@
-body {
-    box-sizing: border-box;
-    margin: 2px;
-}
 .container {
     display: flex;
+    margin:0;
 }
 .item {
+    display: inline-block;
     width: 200px;
     height: 200px;
 }
@@ -18,4 +16,13 @@ body {
 }
 .purple {
     background-color: purple;
+}
+@media screen and (max-width: 768px){
+    .container {
+       display: flex;
+       flex-direction: column;
+    }
+    .item{
+        width: 100%;
+    }
 }
