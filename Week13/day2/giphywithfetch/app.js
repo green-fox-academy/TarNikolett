@@ -12,14 +12,14 @@ button.onclick = function () {
         })
         .then(function (response) {
             console.log(response);
-             response.data.forEach( oneGif => {
+            response.data.forEach(oneGif => {
                 let img = document.createElement('img');
                 let link = document.createElement('a');
                 link.setAttribute('href', oneGif.url);
                 img.setAttribute('src', oneGif.images['480w_still'].url);
                 link.appendChild(img);
                 main.appendChild(link);
-             }); 
-            
+            });
+
         })
 }
