@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ddd;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 12pt;
+}
+
+main {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+#questions-list,
+#add-question,
+nav {
+    margin:  10px 0;
+}
+
+nav {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+nav a {
+    color: #39f;
+    text-decoration: none;
+}
