@@ -1,0 +1,39 @@
+.nav {
+  background-color: rgb(155, 76, 230);
+  width: 100%;
+  height: 100px;
+  margin: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  align-content: center;
+  grid-gap: 20px;
+  padding-left: 100px;
+}
+
+.nav-items {
+  background-color: rgb(9, 240, 240);
+  height: 50px; 
+}
+
+main {
+  display: grid;
+  grid-template-columns: 0.5fr 1.75fr;
+  grid-gap: 15px;
+  margin: 10px 100px;
+}
+
+.green {
+  background-color: rgb(27, 235, 20);
+  height: 650px;
+}
+
+.yellow {
+  background-color: rgb(255, 234, 41);
+  height: 650px;
+}
+
+.grey {
+  background-color: rgb(177, 167, 167);
+  height: 100px;
+  margin: 10px 100px;
+}
