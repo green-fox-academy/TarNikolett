@@ -10,6 +10,7 @@ export default function App() {
 
 function NumberCounter() {
   let [numberCount, setNumberCount] = useState(0);
+
   return (
     <>
       <div>
