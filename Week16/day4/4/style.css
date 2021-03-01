@@ -1,0 +1,20 @@
+nav {
+  background-color: rgb(155, 76, 230);
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  align-content: center;
+  grid-gap: 20px;
+  padding-left: 100px;
+}
+
+.nav-items {
+  background-color: rgb(9, 240, 240);
+  height: 50px;
+}
+
+main {
+  margin: 10px 40px;
+  border: 1px solid black;
+
+}
