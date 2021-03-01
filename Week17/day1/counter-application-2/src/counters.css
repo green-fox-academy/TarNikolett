@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+}
+.counters-container {
+  margin: auto;
+  background-color: #1ab651;
+  color: whitesmoke;
+  width: 500px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.counters-container div {
+  padding: 10px;
+}
+button {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  margin: 0 5px;
+  width: 50px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #4fce7c;
+  border: 1px solid #086e2c;
+}
