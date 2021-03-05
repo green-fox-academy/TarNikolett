@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(216, 196, 167);
+}
+.pizza-picker-container {
+  margin: 20px auto;
+  border: 1px solid black;
+  background: rgb(230, 185, 118);
+  width: 590px;
+  height: 590px;
+}
+
+.pizza-picker-container h1 {
+  text-align: center;
+}
+
+#alap-valaszto {
+  margin: 20px 40px;
+  height: 60px;
+  width: 300px;
+  background-color: rgb(241, 210, 163);
+  font-size: 20px;
+}
+
+.checkbox {
+  margin-bottom: 10px;
+}
+
+.feltet-valaszto,
+.radio-gombok{
+  margin: 0 40px;
+  font-size: 20px;
+}
