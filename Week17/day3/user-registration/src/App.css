@@ -12,7 +12,6 @@ body {
   margin: 50px auto;
   padding: 20px;
   width: 550px;
-  height: 360px;
   background-color: rgb(92, 92, 245);
 }
 
@@ -23,9 +22,9 @@ body {
   padding-left: 7px;
 }
 
-.container input {
+.input {
   width: 100%;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 10px;
   height: 35px;
   margin: 10px 0;
@@ -46,4 +45,16 @@ body {
   height: 50px;
   margin: 10px;
   font-size: 17px;
+}
+
+.alert {
+  border: 2px solid rgb(184, 5, 5);
+  background-color: rgb(228, 225, 225);
+  color: rgb(250, 0, 0);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.invalid {
+  border-color: rgb(250, 1, 1);
 }
