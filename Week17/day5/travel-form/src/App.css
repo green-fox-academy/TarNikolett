@@ -1,0 +1,20 @@
+body {
+  background-color:rgb(236, 106, 59);
+}
+.travel-form {
+  margin: 20px auto;
+  border: 1px solid black;
+  width: 590px;
+  height: 590px;
+  background-color: rgb(245, 167, 138);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.travel-form button {
+  border: 1px solid rgb(240, 240, 240);
+  color: rgb(240, 240, 240);
+}
