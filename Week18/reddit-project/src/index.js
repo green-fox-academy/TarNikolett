@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Header from './Conponents/Header/header';
-import PostsContainer from './Conponents/Posts/posts'
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <PostsContainer />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

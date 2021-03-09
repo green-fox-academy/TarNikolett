@@ -1,0 +1,38 @@
+button {
+  background-repeat:no-repeat;
+  background-position: center;
+  height: 50px;
+  width: 50px;
+  border: none
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px;
+}
+a:hover{
+  color: black;
+  font-weight: 600;
+}
+
+p{
+  margin: 0;
+  padding: 20px;
+}
+
+.upvote {
+  background-image: url('../../../assets/upvote.png');
+}
+.downvote {
+  background-image: url('../../../assets/downvote.png');
+}
+
+.vote-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  width: 50px;
+  padding: 10px 10px;
+}

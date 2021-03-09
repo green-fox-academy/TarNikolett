@@ -1,5 +1,17 @@
 .post-container {
-  width: 200px;
-  height: 200px;
-  border: 1px solid red
+  margin:auto;
+  width: 50%;
+  border-bottom: 2px solid rgb(218, 200, 200);
+  display: grid;
+  grid-template-columns: 10% 85%;
+}
+
+.specific-post-container{
+  padding: 0 20px;
+}
+
+.links-to-modify-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

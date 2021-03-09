@@ -1,37 +1,23 @@
-import { useEffect, useState } from 'react';
 import './posts.css';
-import db from '../../Firebase/db';
+import Vote from './Vote/vote';
 
-function PostsContainer() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    db.collection('posts')
-      .get()
-      .then((queryRef) => {
-        queryRef.forEach((doc) => {
-          const data = doc.data();
-          posts.push({
-            id: doc.id,
-            owner: null,
-            score: data.score,
-            timestamp: data.timestamp,
-            title: data.title,
-            url: data.url,
-            vote: data.vote
-          })
-        })
-        setPosts(posts)
-      });
-  }, [posts.length])
-
+function PostsContainer(props) {
+  let posts = props.posts;
   return (
     <div>
       {posts.map((post) => {
         return (
-          <div>
-            <h1>{post.title}</h1>
-            <p>{post.url}</p>
+          <div className="post-container">
+            <Vote score={props.score} />
+            <div className="specific-post-container">
+              <h1>{post.title}</h1>
+              <a href="">{post.url}</a>
+              <div className="links-to-modify-delete">
+                <p>Submitted</p>
+                <a href="">Modify</a>
+                <a href="">Remove</a>
+              </div>
+            </div>
           </div>
         );
       })}
