@@ -1,13 +1,22 @@
 import { useEffect, useState } from 'react';
-
+import './app.css';
 import Header from './Conponents/Header/header';
 import PostsContainer from './Conponents/Posts/posts';
 import db from '../src/Firebase/db';
+import Aside from '../src/Conponents/Aside/aside';
 
 export default function App() {
-  const [posts, setPosts] = useState([]);
-  let list = [];
+  let [posts, setPosts] = useState([]);
+  let [score, setScore] = useState(null);
+
+  function handleUpvote() {
+    setScore(score + 1)
+  }
+  function handleDownvote() {
+    setScore(score - 1)
+  }
   useEffect(() => {
+    let list = [];
     db.collection('posts')
       .get()
       .then((queryRef) => {
@@ -30,7 +39,8 @@ export default function App() {
   return (
     <div>
       <Header />
-      <PostsContainer posts={posts} />
+      <Aside />
+      <PostsContainer posts={posts} handleDownvote={handleDownvote} handleUpvote={handleUpvote} />
     </div>
   )
 }

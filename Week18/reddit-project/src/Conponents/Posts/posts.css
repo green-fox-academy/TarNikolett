@@ -1,11 +1,12 @@
 .post-container {
-  margin:auto;
-  width: 50%;
-  border-bottom: 2px solid rgb(218, 200, 200);
   display: grid;
   grid-template-columns: 10% 85%;
+  border-bottom: 2px solid rgb(218, 200, 200);
 }
-
+.posts{
+  width: 90%;
+  margin: 0 50% 0 10%;
+}
 .specific-post-container{
   padding: 0 20px;
 }
@@ -14,4 +15,52 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+button {
+  background-repeat:no-repeat;
+  background-position: center;
+  height: 50px;
+  width: 50px;
+  border: none
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px;
+}
+a:hover{
+  color: black;
+  font-weight: 600;
+}
+
+p{
+  margin: 0;
+  padding: 20px;
+}
+
+.upvote {
+  background-image: url('../../assets/upvote.png');
+}
+.upvote:hover,
+.downvote:hover {
+  background-color: rgb(138, 138, 223);
+}
+.downvote {
+  background-image: url('../../assets/downvote.png');
+}
+
+.vote-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  padding: 5px 10px;
+}
+
+.score-div{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
 }

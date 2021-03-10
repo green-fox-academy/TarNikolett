@@ -1,21 +1,25 @@
 import './posts.css';
-import Vote from './Vote/vote';
 
 function PostsContainer(props) {
   let posts = props.posts;
+
   return (
-    <div>
+    <div className="posts">
       {posts.map((post) => {
         return (
-          <div className="post-container">
-            <Vote score={props.score} />
-            <div className="specific-post-container">
+          <div className="post-container" key={post.id}>
+            <div className="vote-container">
+              <button className="upvote" onClick={props.handleUpvote}></button>
+              <div className="score-div">{post.score}</div>
+              <button className="downvote" onClick={props.handleDownvote}></button>
+            </div>
+            <div className="specific-post-container" key={post.id}>
               <h1>{post.title}</h1>
-              <a href="">{post.url}</a>
+              <a href="home">{post.url}</a>
               <div className="links-to-modify-delete">
                 <p>Submitted</p>
-                <a href="">Modify</a>
-                <a href="">Remove</a>
+                <a href="home">Modify</a>
+                <a href="home">Remove</a>
               </div>
             </div>
           </div>

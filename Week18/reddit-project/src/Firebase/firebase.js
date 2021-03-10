@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
 
-
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyCwLVlMaLUE74Y3xK9sBxA-NAoquYaIT-Y",
   authDomain: "reddit-98d9a.firebaseapp.com",
   projectId: "reddit-98d9a",
