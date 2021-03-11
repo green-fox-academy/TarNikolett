@@ -39,14 +39,13 @@ export default function App() {
 
   return (
     <main>
+      <Header />
       <Router>
         <Switch>
           <Route path="/newPost">
-            <Header />
             <AddPost />
           </Route>
           <Route path="">
-            <Header />
             <Aside />
             <PostsContainer posts={posts} />
           </Route>
