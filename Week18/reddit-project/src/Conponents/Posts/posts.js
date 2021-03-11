@@ -9,9 +9,9 @@ function PostsContainer(props) {
         return (
           <div className="post-container" key={post.id}>
             <div className="vote-container">
-              <button className="upvote" onClick={props.handleUpvote}></button>
+              <button className="upvote"></button>
               <div className="score-div">{post.score}</div>
-              <button className="downvote" onClick={props.handleDownvote}></button>
+              <button className="downvote"></button>
             </div>
             <div className="specific-post-container" key={post.id}>
               <h1>{post.title}</h1>
