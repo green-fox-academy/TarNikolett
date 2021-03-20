@@ -1,0 +1,33 @@
+.welcome-container {
+  display: flex;
+  margin: 20px 0;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welcome-message {
+  font-size: 30px;
+  font-weight: 450;
+  letter-spacing: 3;
+  background-color: rgb(176, 202, 223);
+  color:rgb(73, 69, 69);
+  border-radius: 20px;
+ 
+  padding: 10px;
+  text-align: center;
+}
+
+.logout-btn{
+  background-color: rgb(176, 202, 223);
+  color:rgb(73, 69, 69);
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.logout-btn:hover{
+  background-color: rgb(170, 159, 159);
+  cursor: pointer;
+}

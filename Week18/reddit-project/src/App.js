@@ -7,6 +7,8 @@ import Header from './Conponents/Header/header';
 import PostsContainer from './Conponents/Posts/posts';
 import Aside from '../src/Conponents/Aside/aside';
 import AddPost from '../src/Conponents/AddPost/addPost'
+import Login from '../src/Conponents/Login/login';
+import SignIn from '../src/Conponents/SignIn/SignIn';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +17,9 @@ import {
 
 export default function App() {
   let [posts, setPosts] = useState([]);
+  let [user, setUser] = useState(null);
+  let [isClicked, setIsClicked] = useState(false);
+  let [login, setLogin] = useState(false);
 
   useEffect(() => {
     let list = [];
@@ -40,14 +45,18 @@ export default function App() {
   return (
     <main>
       <Header />
+      { user && <SignIn user={user} />}
       <Router>
         <Switch>
           <Route path="/newPost">
-            <AddPost />
+            <AddPost user={user} />
           </Route>
-          <Route path="">
-            <Aside />
-            <PostsContainer posts={posts} />
+          <Route path="/posts">
+            <Aside isClicked={isClicked} setIsClicked={setIsClicked} />
+            <PostsContainer posts={posts} user={user} />
+          </Route>
+          <Route path="/">
+            <Login onLogin={setUser} user={user} login={login} setLogin={setLogin} />
           </Route>
         </Switch>
       </Router>

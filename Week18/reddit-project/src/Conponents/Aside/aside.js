@@ -1,9 +1,9 @@
 import './aside.css';
-import React, { useState } from 'react';
+
 import { Redirect } from 'react-router-dom';
 
-export default function Aside() {
-  let [isClicked, setIsClicked] = useState(false);
+export default function Aside(props) {
+  const { isClicked, setIsClicked } = props;
 
   function handleClick(event) {
     event.preventDefault()

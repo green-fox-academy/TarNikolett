@@ -5,6 +5,7 @@ function PostsContainer(props) {
 
   return (
     <div className="posts">
+
       {posts.map((post) => {
         return (
           <div className="post-container" key={post.id}>

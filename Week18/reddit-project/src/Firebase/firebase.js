@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 
-let firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyCwLVlMaLUE74Y3xK9sBxA-NAoquYaIT-Y",
   authDomain: "reddit-98d9a.firebaseapp.com",
   projectId: "reddit-98d9a",
@@ -11,4 +11,4 @@ let firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export { firebase };
+export default firebase;
