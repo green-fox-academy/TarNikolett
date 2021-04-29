@@ -9,6 +9,7 @@ export default function Form(props) {
   const [isValid, setIsValid] = useState(false);
   const [errorAlert, setErrorAlert] = useState('');
   const [existingALiasAlert, setExistingAliasAlert] = useState('');
+  const [moveAlert, setMoveAlert] = useState('');
 
   function secretCodeGenerator() {
     return Math.floor(Math.random() * (9999 - 1000) + 1000);
@@ -31,20 +32,23 @@ export default function Form(props) {
           secretCode: data.secretCode
         });
       setAlert(`Sikeres mentés, a törléshez szükséges kód: ${data.secretCode}`);
+      setMoveAlert(`Az átirányítás megtörténik 5 másodpercen belül ide: ${data.url}`);
+      setTimeout(() => {
+        window.location.href = data.url;
+      }, 5000);
       setData({
         url: '',
         alias: ''
       });
-    }
-    else {
-      return false
+    } else {
+      setIsValid(false);
+      return false;
     }
   };
 
   function handleInputData(e) {
     let inputName = e.target.name;
     let inputValue = e.target.value;
-
     setData(prevValue => {
       if (inputName === 'url') {
         return ({
@@ -96,17 +100,14 @@ export default function Form(props) {
     else if (value.split('').length > 1) {
       setErrorAlert('');
       setIsValid(true);
+      dataArray.map((data) => {
+        data = JSON.parse(data);
+        if (data.alias === value) {
+          setIsValid(false);
+          return setExistingAliasAlert(`A "${value}" alias már létezik`);
+        }
+      });
     };
-    dataArray.map((data) => {
-      data = JSON.parse(data);
-      if (data.alias === value) {
-        setIsValid(false);
-        setExistingAliasAlert(`A "${value}" alias már létezik`);
-      }
-      else {
-        setIsValid(true);
-      }
-    });
   };
 
   return (
@@ -143,11 +144,15 @@ export default function Form(props) {
           }
         </div>
 
-        <button type="submit" className="btn btn-primary" onClick={submit}>Mentés</button>
+        <button type="submit" className="btn btn-primary" onClick={submit} disabled={isValid === true ? 'false' : 'disabled'}>Mentés</button>
       </form>
       {
         alert &&
         <div className="alert alert-success mt-5" role="alert">{alert}</div>
+      }
+      {
+        moveAlert &&
+        <div className="alert alert-success mt-5" role="alert">{moveAlert}</div>
       }
       {
         existingALiasAlert &&

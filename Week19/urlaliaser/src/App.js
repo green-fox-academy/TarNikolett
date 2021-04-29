@@ -4,7 +4,6 @@ import Form from './Components/Form/form';
 import db from './Firebase/firebaseConfig';
 import {
   BrowserRouter as Router,
-  Switch,
   Route
 } from "react-router-dom";
 
